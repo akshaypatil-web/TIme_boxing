@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time Boxing Planner</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <h1>Time Boxing Planner</h1>
+        <p class="tagline">Plan your day in focused blocks.</p>
+      </div>
+      <div class="date-picker">
+        <label for="planner-date">Date</label>
+        <input
+          id="planner-date"
+          type="date"
+          aria-label="Planner date"
+        />
+      </div>
+    </header>
+
+    <noscript>
+      <div class="noscript-warning">
+        This planner uses JavaScript to populate the schedule and save your data.
+        Please enable JavaScript to use all features.
+      </div>
+    </noscript>
+
+    <main class="planner">
+      <div class="column column--left">
+        <section class="card priorities">
+          <h2>Top Priorities</h2>
+          <ol class="priority-list">
+            <li>
+              <textarea
+                rows="2"
+                data-storage-key="priority-1"
+                aria-label="Top priority 1"
+                placeholder="What absolutely needs to get done today?"
+              ></textarea>
+            </li>
+            <li>
+              <textarea
+                rows="2"
+                data-storage-key="priority-2"
+                aria-label="Top priority 2"
+                placeholder="What absolutely needs to get done today?"
+              ></textarea>
+            </li>
+            <li>
+              <textarea
+                rows="2"
+                data-storage-key="priority-3"
+                aria-label="Top priority 3"
+                placeholder="What absolutely needs to get done today?"
+              ></textarea>
+            </li>
+          </ol>
+        </section>
+
+        <section class="card brain-dump">
+          <div class="section-header">
+            <h2>Brain Dump</h2>
+            <p class="helper-text">
+              Capture ideas, notes, and tasks so they don't distract you later.
+            </p>
+          </div>
+          <textarea
+            rows="14"
+            data-storage-key="brain-dump"
+            aria-label="Brain dump"
+            placeholder="Write down everything on your mind before planning your blocks."
+          ></textarea>
+        </section>
+      </div>
+
+      <div class="column column--right">
+        <section class="card schedule">
+          <div class="section-header">
+            <h2>Schedule</h2>
+            <div class="controls">
+              <button type="button" id="clear-planner" class="secondary">
+                Clear Planner
+              </button>
+              <button type="button" id="print-planner" class="primary">
+                Print
+              </button>
+            </div>
+          </div>
+
+          <table class="schedule-table" aria-label="Daily schedule">
+            <thead>
+              <tr>
+                <th scope="col" class="time-col">Time</th>
+                <th scope="col">:00</th>
+                <th scope="col">:30</th>
+              </tr>
+            </thead>
+            <tbody id="schedule-body"></tbody>
+          </table>
+        </section>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      <p>
+        Pro tip: Plan your most important work during the hours when you have the
+        most energy.
+      </p>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
