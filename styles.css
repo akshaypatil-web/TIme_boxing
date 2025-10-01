@@ -1,0 +1,257 @@
+:root {
+  color-scheme: light;
+  --background: #f8f7ff;
+  --card-background: #ffffff;
+  --primary: #4a5fdc;
+  --primary-dark: #3646a6;
+  --secondary: #e4e7ff;
+  --border: #d9dcf2;
+  --text: #1f2430;
+  --muted: #5c6473;
+  --shadow: 0 12px 24px rgba(31, 36, 48, 0.08);
+  font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f1f0ff 0%, #f9fbff 100%);
+  color: var(--text);
+}
+.noscript-warning {
+  margin: 0 clamp(1.5rem, 4vw, 3.5rem);
+  background: #fff1f0;
+  color: #8a2525;
+  border: 1px solid #f5c2c0;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.95rem;
+}
+
+
+.app-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 2.5rem clamp(1.5rem, 4vw, 3.5rem) 1.5rem;
+  gap: 1rem;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.tagline {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.date-picker {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.date-picker label {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.date-picker input[type="date"] {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--card-background);
+  font: inherit;
+  color: inherit;
+}
+
+.planner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: clamp(1.25rem, 3vw, 2rem);
+  padding: 0 clamp(1.5rem, 4vw, 3.5rem) 3rem;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.25rem, 3vw, 2rem);
+}
+
+.card {
+  background: var(--card-background);
+  border-radius: 1.25rem;
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+  color: var(--primary-dark);
+}
+
+.section-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.helper-text {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.priority-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.priority-list textarea {
+  min-height: 3.6rem;
+}
+
+textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 0.75rem 0.85rem;
+  font: inherit;
+  resize: vertical;
+  background: #fcfcff;
+  color: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(74, 95, 220, 0.18);
+}
+
+textarea::placeholder {
+  color: #9aa0b5;
+}
+
+.controls {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  border: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+button.primary {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 10px 18px rgba(74, 95, 220, 0.22);
+}
+
+button.primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+button.secondary {
+  background: var(--secondary);
+  color: var(--primary-dark);
+}
+
+button.secondary:hover {
+  background: #d5dafd;
+  transform: translateY(-1px);
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.95rem;
+}
+
+.schedule-table thead th {
+  text-align: center;
+  padding-bottom: 0.75rem;
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.schedule-table .time-col {
+  width: 4.5rem;
+  text-align: left;
+  padding-left: 0.25rem;
+}
+
+.schedule-table tbody tr {
+  border-top: 1px solid var(--border);
+}
+
+.schedule-table tbody tr:first-child {
+  border-top: none;
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 0.35rem 0.4rem;
+  vertical-align: top;
+}
+
+.schedule-table td textarea {
+  min-height: 3.5rem;
+  resize: vertical;
+}
+
+.time-label {
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.app-footer {
+  padding: 1.5rem clamp(1.5rem, 4vw, 3.5rem) 3rem;
+  color: var(--muted);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 720px) {
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .controls {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
